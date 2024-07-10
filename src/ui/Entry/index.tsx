@@ -1,17 +1,26 @@
+import Image from 'next/image';
 import Answer from '@/ui/Answer';
 import Question from '@/ui/Question';
+import { ExamEntry } from '@/data/Exam';
 
 export default function Entry ({
-  question,
-  answer,
+  entryNumber,
+  entry,
 }: {
-  question: string,
-  answer: string,
+  entryNumber: number,
+  entry: ExamEntry,
 }) {
   return (
-    <div className='entry'>
-      <Question text={ question } />
-      <Answer text={ answer } />
+    <div className="entry max-w-5xl">
+      <Image
+        className="entry__background -z-[1]"
+        src={ `/${entryNumber}.png`}
+        layout="fill"
+        objectFit="cover"
+        alt={ entry.altText }
+        unoptimized />
+      <Question text={ entry.question } />
+      <Answer text={ entry.answer } />
     </div>
   );
 }
