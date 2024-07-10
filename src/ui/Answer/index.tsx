@@ -1,3 +1,10 @@
+import { Kalam } from "next/font/google";
+
+const kalam = Kalam({
+  weight: '300',
+  subsets: ['latin']
+});
+
 export default function Answer ({
   text,
 }: {
@@ -9,7 +16,13 @@ export default function Answer ({
       <div className="answer__text">{
         text
           .split('\n')
-          .map((line, idx) => (<p key={ idx }>{ line }</p>))
+          .map((line, idx) => (
+            <p
+              key={ idx }
+              className={kalam.className}>{
+                line
+              }</p>
+          ))
       }</div>
     </div>
   );

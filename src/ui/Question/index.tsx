@@ -1,3 +1,10 @@
+import { Noto_Serif } from "next/font/google";
+
+const noto = Noto_Serif({
+  weight: '900',
+  subsets: ['latin']
+});
+
 export default function Question ({
   text,
 }: {
@@ -5,7 +12,7 @@ export default function Question ({
 }) {
   return (
     <div className='question'>
-      <span className="font-bold italic">{ text }</span>
+      <span className={ noto.className }>{ text }</span>
     </div>
   );
 }

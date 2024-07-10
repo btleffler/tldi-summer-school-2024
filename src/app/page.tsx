@@ -1,23 +1,35 @@
-import Image from 'next/image';
-import Entry from '@/ui/Entry';
-import { Exam } from '@/data/Exam';
+import { Noto_Serif, Kalam } from "next/font/google";
+import { ExamData } from '@/data/Exam';
+import Exam from '@/ui/Exam';
+
+const noto = Noto_Serif({
+  weight: '900',
+  subsets: ['latin']
+});
+
+const kalam = Kalam({
+  weight: '700',
+  subsets: ['latin']
+});
+
+const headerClassNames = [
+  noto.className,
+  'text-4xl',
+];
+
+const subheaderClassNames = [
+  kalam.className,
+  'text-2xl',
+];
 
 export default function Home() {
   return (
     <main>
-      <ol className="list-decimal p-8 m-2">
-      {
-        Exam.map((entry, idx) => (
-          <li
-            key={ idx }
-            className="p-7">
-            <Entry
-              question={ entry.question }
-              answer={ entry.answer } />
-          </li>
-        ))
-      }
-      </ol>
+      <div className="mt-5 ml-5">
+        <h1 className={ headerClassNames.join(' ') }>The Last Drive-In: Summer School Final Exam</h1>
+        <h2 className={ subheaderClassNames.join(' ') }>Benjamin Leffler &lt;btleffler[at]gmail.com&gt;</h2>
+      </div>
+      <Exam data={ ExamData } />
     </main>
   );
 }

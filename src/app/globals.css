@@ -2,40 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: #ffffff;
+  background: #181818;
+  text-shadow: #000 0 0 3px;
 }
 
-entry > img {
+.entry {
+  opacity: 0.2;
+}
+
+.entry img {
   opacity: 0;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease-in;
 }
 
-entry.active > img {
+.entry.active {
   opacity: 1;
+}
+
+.entry.active img {
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
 }
 
 p {
   text-indent: 1em;
+  margin-bottom: 0.5em;
 }
 
 .answer {
@@ -43,7 +40,7 @@ p {
 }
 
 .answer > .answer__background {
-  opacity: 0.15;
+  opacity: 0.1;
   border-radius: 6px;
   border: 1px solid silver;
   position: absolute;
@@ -58,8 +55,10 @@ p {
 .answer > .answer__text {
   padding: 15px;
   margin: 5px;
-  text-shadow: #000 1px 0 5px;
-  opacity: 1;
+}
+
+.answer > .answer__text > p:last-of-type {
+  margin-bottom: 0;
 }
 
 .list-decimal {
