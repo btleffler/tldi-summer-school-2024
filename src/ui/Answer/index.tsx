@@ -10,8 +10,13 @@ export default function Answer ({
 }: {
   text: string,
 }) {
+  const classNames = [
+    kalam.className,
+    'text-xl',
+  ];
+
   return (
-    <div className='answer'>
+    <div className="answer">
       <div className="answer__background"></div>
       <div className="answer__text">{
         text
@@ -19,7 +24,7 @@ export default function Answer ({
           .map((line, idx) => (
             <p
               key={ idx }
-              className={kalam.className}>{
+              className={ classNames.join(' ') }>{
                 line
               }</p>
           ))

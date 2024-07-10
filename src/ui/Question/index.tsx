@@ -10,9 +10,14 @@ export default function Question ({
 }: {
   text: string,
 }) {
+  const classNames = [
+    noto.className,
+    'text-xl',
+  ];
+
   return (
-    <div className='question'>
-      <span className={ noto.className }>{ text }</span>
+    <div className="question">
+      <span className={ classNames.join(' ') }>{ text }</span>
     </div>
   );
 }
