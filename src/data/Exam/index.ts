@@ -32,7 +32,7 @@ export const ExamData: ExamEntry[] = [
   {
     // 4
     question: `What actress raised the money to make "Suitable Flesh"?`,
-    answer: `Barbara Crampton raised the money to make "Suitable Flesh" as a producer.`,
+    answer: `Barbara Crampton raised the money to make "Suitable Flesh" as a producer on the film.`,
     altText: `Barbara Crampton in "Suitable Flesh"`,
   },
   {
