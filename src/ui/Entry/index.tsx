@@ -30,7 +30,7 @@ export default function Entry ({
       className={ classNames.join(' ') }>
       <Image
         className="entry__background -z-[1] w-full h-full object-cover object-center"
-        src={ `/${entryNumber}.png`}
+        src={ `./${entryNumber}.png`}
         fill
         alt={ entry.altText }
         priority={ priority }
