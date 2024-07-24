@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: `Joe Bob's Summer School - Final Exam`,
-  description: 'Benjamin Leffler (btleffler[at]gmail.com)',
+  description: 'Answers may or may not be correct (:',
 };
 
 export default function RootLayout({
