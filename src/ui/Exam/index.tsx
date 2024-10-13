@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from "react";
-import { ExamEntry } from "@/data/Exam";
+import type { ExamEntry } from "@/data/Exam";
 import Entry from "@/ui/Entry";
 
 export default function Exam ({

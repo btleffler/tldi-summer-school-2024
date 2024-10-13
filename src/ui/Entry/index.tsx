@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import Answer from '@/ui/Answer';
-import Question from '@/ui/Question';
-import { ExamEntry } from '@/data/Exam';
+import Answer from '@/ui/Entry/Answer';
+import Question from '@/ui/Entry/Question';
+import type { ExamEntry } from '@/data/Exam';
 
 export default function Entry ({
   active = false,
@@ -30,7 +30,7 @@ export default function Entry ({
       className={ classNames.join(' ') }>
       <Image
         className="entry__background -z-[1] w-full h-full object-cover object-center"
-        src={ `./${entryNumber}.png`}
+        src={ `./${entryNumber}.png` }
         fill
         alt={ entry.altText }
         priority={ priority }
