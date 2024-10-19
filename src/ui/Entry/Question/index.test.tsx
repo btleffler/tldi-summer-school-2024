@@ -17,7 +17,7 @@ describe('UI > Entry > Question', () => {
     const questionTextElement = screen.getByText('question');
     const questionTextClasses = [...questionTextElement.classList];
 
-    expect(Noto_Serif).toHaveBeenCalledTimes(1);
+    expect(Noto_Serif).toHaveBeenCalledOnce();
     expect(questionTextClasses.includes(Noto_Serif().className)).toBeTruthy();
     expect(questionTextClasses.includes('text-xl')).toBeTruthy();
   });

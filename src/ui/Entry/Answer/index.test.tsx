@@ -26,7 +26,7 @@ describe('UI > Entry > Answer', () => {
     const questionTextElement = screen.getByText('question');
     const questionTextClasses = [...questionTextElement.classList];
 
-    expect(Kalam).toHaveBeenCalledTimes(1);
+    expect(Kalam).toHaveBeenCalledOnce();
     expect(questionTextClasses.includes(Kalam({ weight: [] }).className)).toBeTruthy();
     expect(questionTextClasses.includes('text-xl')).toBeTruthy();
   });
