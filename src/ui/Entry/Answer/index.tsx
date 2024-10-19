@@ -1,4 +1,4 @@
-import { Kalam } from "next/font/google";
+import { Kalam } from 'next/font/google';
 
 const kalam = Kalam({
   weight: '300',

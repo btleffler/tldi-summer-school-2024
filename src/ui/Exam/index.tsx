@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from "react";
-import { ExamEntry } from "@/data/Exam";
+import type { ExamEntry } from "@/data/Exam";
 import Entry from "@/ui/Entry";
 
 export default function Exam ({
@@ -13,6 +13,8 @@ export default function Exam ({
   const [active, setActive] = useState(0);
 
   useEffect(() => {
+    const exam = document.querySelector('.exam') as HTMLOListElement;
+
     function handleKeydown (event: KeyboardEvent) {
       const { key } = event;
       let next = active;
@@ -34,7 +36,7 @@ export default function Exam ({
       }
 
       if (next !== active) {
-        document.body.style.pointerEvents = 'none';
+        exam.style.pointerEvents = 'none';
 
         document.querySelector(`.entry-${next}`)?.scrollIntoView({
           behavior: 'smooth',
@@ -47,7 +49,7 @@ export default function Exam ({
     };
 
     function handleMouseMove () {
-      document.body.style.pointerEvents = 'auto';
+      exam.style.pointerEvents = 'auto';
     }
 
     window.addEventListener('keydown', handleKeydown);
@@ -60,7 +62,7 @@ export default function Exam ({
   });
 
   return (
-    <ol className="list-decimal p-8 m-2">
+    <ol className="exam list-decimal p-8 m-2">
     {
       data.map((entry, idx) => (
         <div

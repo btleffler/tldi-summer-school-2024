@@ -1,4 +1,4 @@
-import { Noto_Serif } from "next/font/google";
+import { Noto_Serif } from 'next/font/google';
 
 const noto = Noto_Serif({
   weight: '900',
