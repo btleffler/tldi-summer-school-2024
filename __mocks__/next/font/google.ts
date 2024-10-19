@@ -8,6 +8,5 @@ const mockFont = vi.fn(() => ({
   variable: '--mocked-font-variable',
 }));
 
-export const Inter = mockFont;
 export const Kalam = mockFont;
 export const Noto_Serif = mockFont;
